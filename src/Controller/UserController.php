@@ -23,6 +23,7 @@ class UserController extends AbstractController
      */
     public function listAction()
     {
+        dump($this->getUser()->getRoles());
         return $this->render('user/list.html.twig', ['users' => $this->getDoctrine()->getRepository('App\Entity\User')->findAll()]);
     }
 
