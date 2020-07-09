@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Task;
 use App\Form\TaskType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -82,9 +83,15 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
+     *
      */
     public function deleteTaskAction(Task $task)
     {
+        if ($task->getUser()->getUsername() === "Anonyme") {
+            $this->denyAccessUnlessGranted('deleteAnonyme', $task, $message = "Seul un admin peut supprimer cette tâche !");
+        } else {
+            $this->denyAccessUnlessGranted('delete', $task, $message = "Accès refusé !");
+        }
         $em = $this->getDoctrine()->getManager();
         $em->remove($task);
         $em->flush();
