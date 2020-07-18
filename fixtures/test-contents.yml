@@ -1,5 +1,5 @@
 App\Entity\User:
-  user{1..10}:
+  user{1..5}:
     username: <username()>
     password: "passer12345"
     email: <email()>
@@ -13,5 +13,3 @@ App\Entity\Task:
     title: <word()>
     content: <sentence()>
     user: "@user*"
-
-
