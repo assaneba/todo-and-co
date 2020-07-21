@@ -93,6 +93,7 @@ class TaskController extends AbstractController
             $this->denyAccessUnlessGranted('delete', $task, $message = "Accès refusé !");
         }
         $em = $this->getDoctrine()->getManager();
+
         $em->remove($task);
         $em->flush();
 
