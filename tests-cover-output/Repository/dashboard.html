@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for /Applications/MAMP/htdocs/todo-and-co/src/DataFixtures</title>
+  <title>Dashboard for /Applications/MAMP/htdocs/todo-and-co/src/Repository</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../.css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="../.css/nv.d3.min.css" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
       <nav aria-label="breadcrumb">
        <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="../index.html">/Applications/MAMP/htdocs/todo-and-co/src</a></li>
-         <li class="breadcrumb-item"><a href="index.html">DataFixtures</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Repository</a></li>
          <li class="breadcrumb-item active">(Dashboard)</li>
 
        </ol>
@@ -58,9 +58,7 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="AppFixtures.php.html#8">App\DataFixtures\AppFixtures</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="TaskFixtures.php.html#10">App\DataFixtures\TaskFixtures</a></td><td class="text-right">7%</td></tr>
-       <tr><td><a href="UserFixtures.php.html#10">App\DataFixtures\UserFixtures</a></td><td class="text-right">10%</td></tr>
+       <tr><td><a href="UserRepository.php.html#16">App\Repository\UserRepository</a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -77,8 +75,6 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="TaskFixtures.php.html#10">App\DataFixtures\TaskFixtures</a></td><td class="text-right">25</td></tr>
-       <tr><td><a href="UserFixtures.php.html#10">App\DataFixtures\UserFixtures</a></td><td class="text-right">15</td></tr>
 
        </tbody>
       </table>
@@ -116,9 +112,7 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="AppFixtures.php.html#10"><abbr title="App\DataFixtures\AppFixtures::load">load</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="TaskFixtures.php.html#12"><abbr title="App\DataFixtures\TaskFixtures::load">load</abbr></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="UserFixtures.php.html#23"><abbr title="App\DataFixtures\UserFixtures::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRepository.php.html#18"><abbr title="App\Repository\UserRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -135,8 +129,6 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="TaskFixtures.php.html#12"><abbr title="App\DataFixtures\TaskFixtures::load">load</abbr></a></td><td class="text-right">20</td></tr>
-       <tr><td><a href="UserFixtures.php.html#23"><abbr title="App\DataFixtures\UserFixtures::load">load</abbr></a></td><td class="text-right">12</td></tr>
 
        </tbody>
       </table>
@@ -165,7 +157,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([1,1,1,0,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .datum(getCoverageDistributionData([1,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -183,7 +175,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([3,0,0,0,0,0,0,0,0,0,0,2], "Method Coverage"))
+      .datum(getCoverageDistributionData([1,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -233,7 +225,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[0,1,"<a href=\"AppFixtures.php.html#8\">App\\DataFixtures\\AppFixtures<\/a>"],[7.142857142857142,5,"<a href=\"TaskFixtures.php.html#10\">App\\DataFixtures\\TaskFixtures<\/a>"],[10.526315789473683,4,"<a href=\"UserFixtures.php.html#10\">App\\DataFixtures\\UserFixtures<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[0,1,"<a href=\"UserRepository.php.html#16\">App\\Repository\\UserRepository<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -257,7 +249,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[0,1,"<a href=\"AppFixtures.php.html#10\">App\\DataFixtures\\AppFixtures::load<\/a>"],[0,4,"<a href=\"TaskFixtures.php.html#12\">App\\DataFixtures\\TaskFixtures::load<\/a>"],[100,1,"<a href=\"TaskFixtures.php.html#35\">App\\DataFixtures\\TaskFixtures::getDependencies<\/a>"],[100,1,"<a href=\"UserFixtures.php.html#18\">App\\DataFixtures\\UserFixtures::__construct<\/a>"],[0,3,"<a href=\"UserFixtures.php.html#23\">App\\DataFixtures\\UserFixtures::load<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[0,1,"<a href=\"UserRepository.php.html#18\">App\\Repository\\UserRepository::__construct<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);
