@@ -17,12 +17,17 @@
                 </div>
                 <div>
                     <form action="{{ path('task_toggle', {'id' : task.id }) }}">
-                        <button class="btn btn-success btn-sm pull-right">
-                            {% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}
-                        </button>
+                        {% if app.user == task.user %}
+                            <button class="btn btn-success btn-sm pull-right">
+                                {% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}
+                            </button>
+                        {% endif %}
+
                     </form>
                     <form action="{{ path('task_delete', {'id' : task.id }) }}">
-                        <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                        {% if app.user == task.user %}
+                            <button class="btn btn-danger btn-sm pull-right">Supprimer</button>
+                        {% endif %}
                     </form>
                 </div>
             </div>
