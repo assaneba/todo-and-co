@@ -1,6 +1,5 @@
 # ToDo & Co
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b0e3633eb78c4595813656b6d525fc47)](https://www.codacy.com/manual/assaneba/todo-and-co?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=assaneba/todo-and-co&amp;utm_campaign=Badge_Grade)
 
 Application to manage daily tasks
 
